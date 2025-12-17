@@ -54,10 +54,10 @@
                     وتلخيصها وإجابة أسئلتك بطريقة ذكية وسهلة
                 </p>
                 
-                <!-- 🔹 3. الأزرار الرئيسية -->
+                <!-- 🔹 3. الأزرار الرئيسية - المعدلة -->
                 <div class="hero-buttons">
-                    <a href="pages/register.html" class="btn-primary btn-large">
-                        <i class="fas fa-rocket"></i> ابدأ مجاناً الآن
+                    <a href="#" id="startNowBtn" class="btn-primary btn-large">
+                        <i class="fas fa-brain"></i> استخدم الذكاء الآن
                     </a>
                     <a href="#features" class="btn-secondary btn-large">
                         <i class="fas fa-play-circle"></i> شاهد الفيديو التعريفي
@@ -219,5 +219,14 @@
     <!-- 🔹 10. الروابط الجافاسكريبت -->
     <script src="js/animations.js"></script>
     <script src="js/main.js"></script>
+    
+    <script>
+        // تهيئة تأثيرات الصفحة الرئيسية
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof initHomeAnimations === 'function') {
+                initHomeAnimations();
+            }
+        });
+    </script>
 </body>
 </html>
