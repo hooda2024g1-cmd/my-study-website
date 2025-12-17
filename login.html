@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تسجيل الدخول - المنصة الدراسية</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <i class="fas fa-graduation-cap"></i>
+            <span>منصتي الدراسية</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">الرئيسية</a></li>
+            <li><a href="upload.html">رفع وتحليل PDF</a></li>
+            <li><a href="about.html">عن الفريق</a></li>
+            <li><a href="login.html" class="active">تسجيل الدخول</a></li>
+        </ul>
+    </nav>
+
+    <div class="auth-container">
+        <div class="auth-box" id="loginBox">
+            <h1><i class="fas fa-sign-in-alt"></i> تسجيل الدخول</h1>
+            
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="loginEmail"><i class="fas fa-envelope"></i> البريد الإلكتروني</label>
+                    <input type="email" id="loginEmail" required placeholder="example@email.com">
+                </div>
+                
+                <div class="form-group">
+                    <label for="loginPassword"><i class="fas fa-lock"></i> كلمة المرور</label>
+                    <input type="password" id="loginPassword" required placeholder="أدخل كلمة المرور">
+                    <button type="button" class="show-password" onclick="togglePassword('loginPassword')">
+                        <i class="fas fa-eye"></i>
+                    </button>
+                </div>
+                
+                <button type="submit" class="auth-btn">
+                    <i class="fas fa-sign-in-alt"></i> تسجيل الدخول
+                </button>
+            </form>
+            
+            <div class="auth-footer">
+                <p>ليس لديك حساب؟ <a href="#" onclick="showSignup()">إنشاء حساب جديد</a></p>
+                <p><a href="#" class="forgot-password">نسيت كلمة المرور؟</a></p>
+            </div>
+        </div>
+        
+        <div class="auth-box" id="signupBox" style="display: none;">
+            <h1><i class="fas fa-user-plus"></i> إنشاء حساب جديد</h1>
+            
+            <form id="signupForm">
+                <div class="form-group">
+                    <label for="fullName"><i class="fas fa-user"></i> الاسم الرباعي</label>
+                    <input type="text" id="fullName" required placeholder="أدخل الاسم الأول والثاني والثالث والرابع" 
+                           minlength="8" pattern="^[\u0600-\u06FF\s]{8,}$"
+                           title="الاسم يجب أن يكون رباعي (8 أحرف على الأقل)">
+                    <small class="form-hint">مثال: أحمد محمد علي حسن</small>
+                </div>
+                
+                <div class="form-group">
+                    <label for="signupEmail"><i class="fas fa-envelope"></i> البريد الإلكتروني</label>
+                    <input type="email" id="signupEmail" required placeholder="example@email.com">
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone"><i class="fas fa-phone"></i> رقم الهاتف</label>
+                    <div class="phone-input">
+                        <select id="countryCode" required>
+                            <option value="" selected disabled>اختر الدولة</option>
+                            <option value="+20">مصر (+20)</option>
+                            <option value="+966">السعودية (+966)</option>
+                            <option value="+971">الإمارات (+971)</option>
+                            <option value="+962">الأردن (+962)</option>
+                            <option value="+965">الكويت (+965)</option>
+                            <option value="+968">عُمان (+968)</option>
+                            <option value="+974">قطر (+974)</option>
+                            <option value="+213">الجزائر (+213)</option>
+                            <option value="+212">المغرب (+212)</option>
+                            <option value="+216">تونس (+216)</option>
+                        </select>
+                        <input type="tel" id="phone" required placeholder="رقم الهاتف" 
+                               pattern="[0-9]{8,15}" title="رقم الهاتف يجب أن يكون أرقام فقط">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="signupPassword"><i class="fas fa-lock"></i> كلمة المرور</label>
+                    <input type="password" id="signupPassword" required 
+                           placeholder="كلمة مرور قوية (8 أحرف على الأقل)"
+                           pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d@$!%*#?&]{8,}$"
+                           title="كلمة المرور يجب أن تحتوي على حرف ورقم على الأقل">
+                    <button type="button" class="show-password" onclick="togglePassword('signupPassword')">
+                        <i class="fas fa-eye"></i>
+                    </button>
+                    <small class="form-hint">يجب أن تحتوي على حرف ورقم على الأقل (8 أحرف)</small>
+                </div>
+                
+                <div class="form-group">
+                    <label for="confirmPassword"><i class="fas fa-lock"></i> تأكيد كلمة المرور</label>
+                    <input type="password" id="confirmPassword" required placeholder="أعد كتابة كلمة المرور">
+                    <button type="button" class="show-password" onclick="togglePassword('confirmPassword')">
+                        <i class="fas fa-eye"></i>
+                    </button>
+                </div>
+                
+                <div class="form-group checkbox-group">
+                    <input type="checkbox" id="agreeTerms" required>
+                    <label for="agreeTerms">أوافق على <a href="#" class="terms-link">الشروط والأحكام</a></label>
+                </div>
+                
+                <button type="submit" class="auth-btn">
+                    <i class="fas fa-user-plus"></i> إنشاء حساب
+                </button>
+            </form>
+            
+            <div class="auth-footer">
+                <p>لديك حساب بالفعل؟ <a href="#" onclick="showLogin()">تسجيل الدخول</a></p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>جميع الحقوق محفوظة © 2026 - المنصة الدراسية الذكية</p>
+        <p>تم التطوير بـ <i class="fas fa-heart"></i> من قبل فريق عربي</p>
+    </footer>
+
+    <script>
+        // التبديل بين تسجيل الدخول وإنشاء حساب
+        function showSignup() {
+            document.getElementById('loginBox').style.display = 'none';
+            document.getElementById('signupBox').style.display = 'block';
+        }
+        
+        function showLogin() {
+            document.getElementById('signupBox').style.display = 'none';
+            document.getElementById('loginBox').style.display = 'block';
+        }
+        
+        // إظهار/إخفاء كلمة المرور
+        function togglePassword(inputId) {
+            const input = document.getElementById(inputId);
+            const icon = input.nextElementSibling.querySelector('i');
+            
+            if (input.type === 'password') {
+                input.type = 'text';
+                icon.classList.remove('fa-eye');
+                icon.classList.add('fa-eye-slash');
+            } else {
+                input.type = 'password';
+                icon.classList.remove('fa-eye-slash');
+                icon.classList.add('fa-eye');
+            }
+        }
+        
+        // التحقق من تطابق كلمات المرور
+        document.getElementById('signupForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const password = document.getElementById('signupPassword').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            const fullName = document.getElementById('fullName').value;
+            
+            // التحقق من الاسم الرباعي
+            const nameParts = fullName.trim().split(/\s+/);
+            if (nameParts.length < 4) {
+                alert('⚠️ الرجاء إدخال الاسم الرباعي كاملاً');
+                return;
+            }
+            
+            // التحقق من تطابق كلمات المرور
+            if (password !== confirmPassword) {
+                alert('⚠️ كلمات المرور غير متطابقة');
+                return;
+            }
+            
+            // التحقق من قوة كلمة المرور
+            if (password.length < 8) {
+                alert('⚠️ كلمة المرور يجب أن تكون 8 أحرف على الأقل');
+                return;
+            }
+            
+            if (!/(?=.*[A-Za-z])(?=.*\d)/.test(password)) {
+                alert('⚠️ كلمة المرور يجب أن تحتوي على حرف ورقم على الأقل');
+                return;
+            }
+            
+            // هنا كود إرسال البيانات للخادم
+            const userData = {
+                fullName: fullName,
+                email: document.getElementById('signupEmail').value,
+                phone: document.getElementById('countryCode').value + document.getElementById('phone').value,
+                password: password
+            };
+            
+            // تخزين مؤقت في localStorage (فقط للعرض - في الواقع ترسل للسيرفر)
+            localStorage.setItem('currentUser', JSON.stringify(userData));
+            
+            alert('✅ تم إنشاء الحساب بنجاح!');
+            showLogin();
+        });
+        
+        // تسجيل الدخول
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const email = document.getElementById('loginEmail').value;
+            const password = document.getElementById('loginPassword').value;
+            
+            // هنا كود التحقق من الخادم
+            // للعرض فقط، نتحقق من localStorage
+            const storedUser = localStorage.getItem('currentUser');
+            
+            if (storedUser) {
+                const user = JSON.parse(storedUser);
+                
+                if (user.email === email && user.password === password) {
+                    // إنشاء رمز جلسة فريد
+                    const sessionToken = 'session_' + Date.now() + '_' + Math.random().toString(36).substr(2);
+                    localStorage.setItem('sessionToken', sessionToken);
+                    localStorage.setItem('userEmail', email);
+                    
+                    alert('✅ تم تسجيل الدخول بنجاح!');
+                    window.location.href = 'dashboard.html'; // صفحة المستخدم
+                } else {
+                    alert('❌ البريد الإلكتروني أو كلمة المرور غير صحيحة');
+                }
+            } else {
+                alert('❌ لا يوجد حساب بهذا البريد الإلكتروني');
+            }
+        });
+        
+        // التحقق من وجود جلسة نشطة عند فتح الصفحة
+        window.addEventListener('load', function() {
+            const sessionToken = localStorage.getItem('sessionToken');
+            if (sessionToken) {
+                // تحويل المستخدم للصفحة الرئيسية إذا كان مسجل دخول
+                window.location.href = 'dashboard.html';
+            }
+        });
+    </script>
+</body>
+</html>
