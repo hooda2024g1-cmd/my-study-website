@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تسجيل الدخول - المنصة الدراسية</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/auth.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- النافبار -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-graduation-cap"></i>
+                <h1>منصتي<span>الدراسية</span></h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="../index.html"><i class="fas fa-home"></i> الرئيسية</a></li>
+                <li><a href="register.html"><i class="fas fa-user-plus"></i> إنشاء حساب</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- صفحة تسجيل الدخول -->
+    <div class="auth-container">
+        <div class="auth-box">
+            <!-- العنوان -->
+            <div class="auth-header">
+                <h2><i class="fas fa-sign-in-alt"></i> تسجيل الدخول</h2>
+                <p>مرحباً بعودتك! سجل دخولك للاستمرار</p>
+            </div>
+
+            <!-- النموذج -->
+            <form id="loginForm" class="auth-form">
+                <!-- البريد الإلكتروني -->
+                <div class="form-group">
+                    <label for="email">
+                        <i class="fas fa-envelope"></i> البريد الإلكتروني *
+                    </label>
+                    <input type="email" id="loginEmail" name="email" required
+                           placeholder="example@email.com">
+                </div>
+
+                <!-- كلمة المرور -->
+                <div class="form-group">
+                    <label for="password">
+                        <i class="fas fa-lock"></i> كلمة المرور *
+                    </label>
+                    <input type="password" id="loginPassword" name="password" required
+                           placeholder="أدخل كلمة المرور">
+                    
+                    <!-- نسيان كلمة المرور -->
+                    <div class="form-options">
+                        <label class="checkbox">
+                            <input type="checkbox" id="remember" name="remember">
+                            <span>تذكرني</span>
+                        </label>
+                        <a href="forgot-password.html" class="forgot-password">
+                            نسيت كلمة المرور؟
+                        </a>
+                    </div>
+                </div>
+
+                <!-- زر تسجيل الدخول -->
+                <button type="submit" class="auth-submit-btn" id="loginBtn">
+                    <i class="fas fa-sign-in-alt"></i> تسجيل الدخول
+                    <span class="btn-loading"></span>
+                </button>
+
+                <!-- روابط أخرى -->
+                <div class="auth-links">
+                    <p>ليس لديك حساب؟ <a href="register.html">إنشاء حساب جديد</a></p>
+                    <p>أو</p>
+                    <button type="button" class="social-login-btn google-btn">
+                        <i class="fab fa-google"></i> تسجيل الدخول باستخدام Google
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <!-- قسم المزايا -->
+        <div class="auth-sidebar">
+            <h3><i class="fas fa-star"></i> مزايا تسجيل الدخول</h3>
+            <ul class="benefits-list">
+                <li><i class="fas fa-check-circle"></i> الوصول إلى جميع الملفات المحفوظة</li>
+                <li><i class="fas fa-check-circle"></i> تحليل 50 ملف شهرياً</li>
+                <li><i class="fas fa-check-circle"></i> متابعة التقدم الدراسي</li>
+                <li><i class="fas fa-check-circle"></i> شهادات إتمام الدورات</li>
+                <li><i class="fas fa-check-circle"></i> دعم فني مميز</li>
+                <li><i class="fas fa-check-circle"></i> تحديثات مستمرة</li>
+            </ul>
+
+            <!-- إحصائيات -->
+            <div class="stats-box">
+                <h4><i class="fas fa-chart-line"></i> إحصائيات المنصة</h4>
+                <div class="mini-stats">
+                    <div class="mini-stat">
+                        <span class="number">5,000+</span>
+                        <span class="label">طالب</span>
+                    </div>
+                    <div class="mini-stat">
+                        <span class="number">12,000+</span>
+                        <span class="label">ملف</span>
+                    </div>
+                    <div class="mini-stat">
+                        <span class="number">99%</span>
+                        <span class="label">رضا</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- صورة توضيحية -->
+            <div class="auth-illustration">
+                <img src="../assets/images/login-illustration.png" alt="تسجيل الدخول">
+            </div>
+        </div>
+    </div>
+
+    <!-- رسالة النجاح -->
+    <div id="loginSuccessModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <h3>مرحباً بعودتك! 🎉</h3>
+            <p>تم تسجيل الدخول بنجاح</p>
+            <div class="modal-actions">
+                <button onclick="redirectToDashboard()" class="btn-primary">
+                    <i class="fas fa-tachometer-alt"></i> الذهاب للوحة التحكم
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- الفوتر -->
+    <footer style="margin-top: 0;">
+        <div class="container">
+            <div class="footer-bottom">
+                <div class="team-credits">
+                    <p>
+                        <i class="fas fa-code"></i> 
+                        <strong>المطور:</strong> محمود أحمد سعيد
+                    </p>
+                    <p>
+                        <i class="fas fa-lightbulb"></i> 
+                        <strong>صاحبة الفكرة:</strong> سلمي سيد سخيل
+                    </p>
+                </div>
+                <p class="copyright">
+                    جميع الحقوق محفوظة © 2026 - المنصة الدراسية الذكية
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- الروابط الجافاسكريبت -->
+    <script src="../js/main.js"></script>
+    <script src="../js/auth.js"></script>
+    <script>
+        // نظام تسجيل الدخول
+        class LoginManager {
+            constructor() {
+                this.init();
+            }
+
+            init() {
+                this.initFormValidation();
+                this.checkRememberedUser();
+            }
+
+            initFormValidation() {
+                const form = document.getElementById('loginForm');
+                if (!form) return;
+
+                form.addEventListener('submit', async (e) => {
+                    e.preventDefault();
+                    await this.handleLogin();
+                });
+            }
+
+            async handleLogin() {
+                const email = document.getElementById('loginEmail').value.trim();
+                const password = document.getElementById('loginPassword').value;
+                const remember = document.getElementById('remember').checked;
+                const loginBtn = document.getElementById('loginBtn');
+
+                // التحقق من المدخلات
+                if (!email || !password) {
+                    this.showNotification('الرجاء ملء جميع الحقول', 'error');
+                    return;
+                }
+
+                // التحقق من صحة البريد الإلكتروني
+                if (!this.validateEmail(email)) {
+                    this.showNotification('البريد الإلكتروني غير صحيح', 'error');
+                    return;
+                }
+
+                // عرض حالة التحميل
+                loginBtn.classList.add('loading');
+                loginBtn.disabled = true;
+
+                try {
+                    // محاكاة التأخير للاتصال بالخادم
+                    await new Promise(resolve => setTimeout(resolve, 1500));
+                    
+                    // التحقق من بيانات المستخدم في LocalStorage
+                    const user = this.authenticateUser(email, password);
+                    
+                    if (user) {
+                        // حفظ بيانات الجلسة
+                        this.createSession(user, remember);
+                        
+                        // عرض رسالة النجاح
+                        this.showSuccess();
+                    } else {
+                        throw new Error('بيانات الدخول غير صحيحة');
+                    }
+                } catch (error) {
+                    this.showNotification('البريد الإلكتروني أو كلمة المرور غير صحيحة', 'error');
+                } finally {
+                    loginBtn.classList.remove('loading');
+                    loginBtn.disabled = false;
+                }
+            }
+
+            authenticateUser(email, password) {
+                try {
+                    // البحث في المستخدمين المسجلين
+                    const users = JSON.parse(localStorage.getItem('users')) || [];
+                    
+                    // تشفير كلمة المرور المدخلة (بنفس طريقة التسجيل)
+                    const hashedPassword = btoa(password);
+                    
+                    // البحث عن المستخدم
+                    const user = users.find(u => 
+                        u.email === email && u.password === hashedPassword
+                    );
+                    
+                    return user;
+                } catch (error) {
+                    console.error('خطأ في المصادقة:', error);
+                    return null;
+                }
+            }
+
+            createSession(user, remember) {
+                // حفظ بيانات المستخدم الحالي
+                localStorage.setItem('currentUser', JSON.stringify(user));
+                
+                // إذا اختار "تذكرني"
+                if (remember) {
+                    localStorage.setItem('rememberedUser', JSON.stringify({
+                        email: user.email,
+                        timestamp: Date.now()
+                    }));
+                } else {
+                    localStorage.removeItem('rememberedUser');
+                }
+                
+                // حفظ آخر وقت تسجيل دخول
+                localStorage.setItem('lastLogin', Date.now());
+            }
+
+            checkRememberedUser() {
+                try {
+                    const remembered = JSON.parse(localStorage.getItem('rememberedUser'));
+                    if (remembered) {
+                        const emailInput = document.getElementById('loginEmail');
+                        if (emailInput) {
+                            emailInput.value = remembered.email;
+                            document.getElementById('remember').checked = true;
+                        }
+                    }
+                } catch (error) {
+                    console.error('خطأ في تحميل المستخدم المتذكر:', error);
+                }
+            }
+
+            showSuccess() {
+                const modal = document.getElementById('loginSuccessModal');
+                if (modal) {
+                    modal.style.display = 'flex';
+                    
+                    // توجيه تلقائي بعد 3 ثواني
+                    setTimeout(() => {
+                        window.location.href = '../index.html';
+                    }, 3000);
+                }
+            }
+
+            validateEmail(email) {
+                const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                return regex.test(email);
+            }
+
+            showNotification(message, type = 'info') {
+                if (typeof window.showNotification === 'function') {
+                    window.showNotification(message, type);
+                } else {
+                    alert(message);
+                }
+            }
+        }
+
+        // تهيئة نظام تسجيل الدخول
+        document.addEventListener('DOMContentLoaded', () => {
+            new LoginManager();
+            
+            // تسجيل الدخول باستخدام Google
+            const googleBtn = document.querySelector('.google-btn');
+            if (googleBtn) {
+                googleBtn.addEventListener('click', () => {
+                    alert('سيتم تفعيل تسجيل الدخول باستخدام Google قريباً');
+                });
+            }
+        });
+
+        // دالات المساعدة
+        function redirectToDashboard() {
+            window.location.href = '../index.html';
+        }
+    </script>
+</body>
+</html>
