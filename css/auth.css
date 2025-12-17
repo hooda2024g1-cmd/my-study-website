@@ -1,0 +1,457 @@
+/* ====== تصميم صفحات المصادقة ====== */
+.auth-container {
+    display: flex;
+    min-height: calc(100vh - 140px);
+    padding: 100px 20px 50px;
+    max-width: 1400px;
+    margin: 0 auto;
+    gap: 3rem;
+}
+
+.auth-box {
+    flex: 1;
+    background: white;
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    max-width: 600px;
+}
+
+.auth-sidebar {
+    flex: 1;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    color: white;
+    padding: 3rem;
+    border-radius: 20px;
+    max-width: 500px;
+}
+
+.auth-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.auth-header h2 {
+    color: var(--secondary);
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.auth-header p {
+    color: #666;
+    font-size: 1.1rem;
+}
+
+/* ====== النموذج ====== */
+.auth-form {
+    margin-top: 1rem;
+}
+
+.form-group {
+    margin-bottom: 1.8rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--secondary);
+    font-weight: 600;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 1rem 1.5rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: var(--transition);
+    background: #f9f9f9;
+}
+
+.form-group input:focus {
+    border-color: var(--primary);
+    background: white;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.1);
+}
+
+.form-group input:invalid {
+    border-color: var(--accent);
+}
+
+.form-hint {
+    display: block;
+    margin-top: 0.3rem;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.validation-message {
+    margin-top: 0.3rem;
+    font-size: 0.9rem;
+    min-height: 20px;
+}
+
+/* ====== قوة كلمة المرور ====== */
+.password-strength {
+    margin-top: 0.8rem;
+}
+
+.strength-bar {
+    height: 6px;
+    background: #e0e0e0;
+    border-radius: 3px;
+    overflow: hidden;
+    margin-bottom: 0.3rem;
+}
+
+.strength-fill {
+    height: 100%;
+    width: 0%;
+    background: var(--accent);
+    transition: width 0.3s, background 0.3s;
+    border-radius: 3px;
+}
+
+.strength-text {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.strength-text span {
+    font-weight: 600;
+}
+
+/* متطلبات كلمة المرور */
+.password-requirements {
+    background: #f8f9fa;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-top: 0.8rem;
+    border: 1px solid #e9ecef;
+}
+
+.password-requirements small {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #666;
+    font-weight: 600;
+}
+
+.password-requirements ul {
+    list-style: none;
+    margin-top: 0.5rem;
+    padding-right: 1.5rem;
+}
+
+.password-requirements li {
+    font-size: 0.85rem;
+    color: #666;
+    margin: 0.3rem 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.password-requirements li i {
+    color: #ccc;
+    font-size: 0.8rem;
+}
+
+.password-requirements li.valid i {
+    color: var(--success);
+}
+
+.password-match {
+    margin-top: 0.3rem;
+    font-size: 0.9rem;
+    min-height: 20px;
+    color: var(--accent);
+}
+
+.password-match.valid {
+    color: var(--success);
+}
+
+/* ====== الشروط ====== */
+.terms-group {
+    background: #f8f9fa;
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+.checkbox {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.8rem;
+    cursor: pointer;
+    font-size: 0.95rem;
+    color: #333;
+}
+
+.checkbox input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    margin-top: 3px;
+}
+
+.checkbox a {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+.checkbox a:hover {
+    text-decoration: underline;
+}
+
+/* ====== زر التسجيل ====== */
+.auth-submit-btn {
+    width: 100%;
+    padding: 1.2rem;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.auth-submit-btn:hover {
+    background: var(--secondary);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(74, 144, 226, 0.3);
+}
+
+.auth-submit-btn:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.btn-loading {
+    display: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-top-color: white;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+.auth-submit-btn.loading .btn-loading {
+    display: block;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* ====== روابط أخرى ====== */
+.auth-links {
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid #eee;
+}
+
+.auth-links p {
+    margin: 0.5rem 0;
+    color: #666;
+}
+
+.auth-links a {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.auth-links a:hover {
+    text-decoration: underline;
+}
+
+/* ====== تسجيل الدخول الاجتماعي ====== */
+.social-login-btn {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid #ddd;
+    background: white;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.social-login-btn:hover {
+    border-color: var(--primary);
+    background: #f8f9fa;
+}
+
+.google-btn {
+    color: #333;
+}
+
+/* ====== قسم الفوائد ====== */
+.benefits-list {
+    list-style: none;
+    margin-top: 2rem;
+}
+
+.benefits-list li {
+    padding: 0.8rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.benefits-list li:last-child {
+    border-bottom: none;
+}
+
+.benefits-list li i {
+    color: #FFD700;
+}
+
+/* ====== كود الدعوة ====== */
+.referral-box {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-top: 2rem;
+}
+
+.referral-box h4 {
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.referral-box p {
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+}
+
+.referral-box input {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+/* ====== الصورة التوضيحية ====== */
+.auth-illustration {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.auth-illustration img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+/* ====== المودال ====== */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 10000;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background: white;
+    padding: 3rem;
+    border-radius: 20px;
+    text-align: center;
+    max-width: 400px;
+    animation: modalIn 0.3s ease;
+}
+
+@keyframes modalIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.modal-icon {
+    font-size: 4rem;
+    color: var(--success);
+    margin-bottom: 1rem;
+}
+
+.modal-content h3 {
+    color: var(--secondary);
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+}
+
+.modal-content p {
+    color: #666;
+    margin-bottom: 2rem;
+}
+
+.modal-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+/* ====== تصميم متجاوب ====== */
+@media (max-width: 992px) {
+    .auth-container {
+        flex-direction: column;
+        padding: 100px 20px 30px;
+    }
+    
+    .auth-box, .auth-sidebar {
+        max-width: 100%;
+    }
+    
+    .auth-header h2 {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .auth-box {
+        padding: 2rem;
+    }
+    
+    .auth-sidebar {
+        padding: 2rem;
+    }
+    
+    .form-group input {
+        padding: 0.8rem 1.2rem;
+    }
+}

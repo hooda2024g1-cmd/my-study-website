@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>المنصة الدراسية الذكية</title>
+    <!-- الروابط -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- 🔹 1. النافبار -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <!-- الشعار -->
+            <div class="logo">
+                <i class="fas fa-graduation-cap"></i>
+                <h1>منصتي<span>الدراسية</span></h1>
+            </div>
+
+            <!-- القائمة -->
+            <ul class="nav-menu">
+                <li><a href="index.html" class="active"><i class="fas fa-home"></i> الرئيسية</a></li>
+                <li><a href="pages/upload.html"><i class="fas fa-file-upload"></i> رفع PDF</a></li>
+                <li><a href="pages/about.html"><i class="fas fa-users"></i> عن الفريق</a></li>
+                <li class="auth-buttons">
+                    <a href="pages/login.html" class="btn-login"><i class="fas fa-sign-in-alt"></i> تسجيل الدخول</a>
+                    <a href="pages/register.html" class="btn-register"><i class="fas fa-user-plus"></i> حساب جديد</a>
+                </li>
+            </ul>
+
+            <!-- زر الموبايل -->
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 🔹 2. قسم الهيرو الرئيسي -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h2 class="welcome-text">
+                    <span class="typed-text"></span>
+                    <span class="cursor">|</span>
+                </h2>
+                <h1>المنصة الدراسية <span class="highlight">الذكية</span></h1>
+                <p class="hero-description">
+                    أول منصة عربية تستخدم الذكاء الاصطناعي لتحليل المواد الدراسية
+                    وتلخيصها وإجابة أسئلتك بطريقة ذكية وسهلة
+                </p>
+                
+                <!-- 🔹 3. الأزرار الرئيسية -->
+                <div class="hero-buttons">
+                    <a href="pages/register.html" class="btn-primary btn-large">
+                        <i class="fas fa-rocket"></i> ابدأ مجاناً الآن
+                    </a>
+                    <a href="#features" class="btn-secondary btn-large">
+                        <i class="fas fa-play-circle"></i> شاهد الفيديو التعريفي
+                    </a>
+                </div>
+
+                <!-- 🔹 4. إحصائيات -->
+                <div class="stats">
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="5000">0</span>
+                        <span class="stat-label">طالب نشط</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="12000">0</span>
+                        <span class="stat-label">ملف تم تحليله</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="99">0</span>
+                        <span class="stat-label">% رضا المستخدمين</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 🔹 5. الصورة -->
+            <div class="hero-image">
+                <img src="assets/images/hero-image.png" alt="التعليم الذكي">
+                <div class="floating-elements">
+                    <div class="float-icon"><i class="fas fa-book"></i></div>
+                    <div class="float-icon"><i class="fas fa-brain"></i></div>
+                    <div class="float-icon"><i class="fas fa-chart-line"></i></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 🔹 6. قسم المميزات -->
+    <section class="features" id="features">
+        <div class="container">
+            <h2 class="section-title">لماذا تختار <span>منصتنا؟</span></h2>
+            <p class="section-subtitle">كل ما تحتاجه لنجاحك الدراسي في مكان واحد</p>
+
+            <div class="features-grid">
+                <!-- ميزة 1 -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>ذكاء اصطناعي متطور</h3>
+                    <p>تقنية حديثة لفهم وتحليل محتواك الدراسي بدقة عالية</p>
+                </div>
+
+                <!-- ميزة 2 -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>سرعة فائقة</h3>
+                    <p>تحليل الملفات في ثوانٍ معدودة ونتائج فورية</p>
+                </div>
+
+                <!-- ميزة 3 -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>أمان تام</h3>
+                    <p>بياناتك محمية ولا يتم مشاركتها مع أي طرف ثالث</p>
+                </div>
+
+                <!-- ميزة 4 -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3>دعم فني</h3>
+                    <p>فريق دعم عربي متاح 24/7 للإجابة على استفساراتك</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 🔹 7. قسم مشاركة الرابط -->
+    <section class="share-section">
+        <div class="container">
+            <h2><i class="fas fa-share-alt"></i> شارك مع أصدقائك</h2>
+            <p>انسخ الرابط وأرسله لأصدقائك ليحصلوا على مزايا إضافية</p>
+            
+            <div class="share-box">
+                <div class="link-container">
+                    <input type="text" id="share-link" value="https://study-platform.com/ref/STUDENT2024" readonly>
+                    <button class="copy-btn" onclick="copyShareLink()">
+                        <i class="fas fa-copy"></i> نسخ الرابط
+                    </button>
+                </div>
+                <p class="share-note"><i class="fas fa-gift"></i> كل صديق يسجل عن طريق رابطك يكسبك شهر إضافي مجاني!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 🔹 8. الفوتر -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <!-- معلومات -->
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <i class="fas fa-graduation-cap"></i>
+                        <h3>المنصة الدراسية الذكية</h3>
+                    </div>
+                    <p>نحو تعليم عربي ذكي ومتطور للجميع</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <!-- روابط سريعة -->
+                <div class="footer-col">
+                    <h4>روابط سريعة</h4>
+                    <ul>
+                        <li><a href="pages/login.html">تسجيل الدخول</a></li>
+                        <li><a href="pages/register.html">إنشاء حساب</a></li>
+                        <li><a href="pages/about.html">عن الفريق</a></li>
+                        <li><a href="#">الشروط والأحكام</a></li>
+                    </ul>
+                </div>
+
+                <!-- معلومات التواصل -->
+                <div class="footer-col">
+                    <h4>اتصل بنا</h4>
+                    <p><i class="fas fa-envelope"></i> support@study-platform.com</p>
+                    <p><i class="fas fa-phone"></i> +20 123 456 7890</p>
+                </div>
+            </div>
+
+            <!-- 🔹 9. حقوق النشر مع أسماء الفريق -->
+            <div class="footer-bottom">
+                <div class="team-credits">
+                    <p>
+                        <i class="fas fa-code"></i> 
+                        <strong>المطور:</strong> محمود أحمد سعيد
+                    </p>
+                    <p>
+                        <i class="fas fa-lightbulb"></i> 
+                        <strong>صاحبة الفكرة:</strong> سلمي سيد سخيل
+                    </p>
+                </div>
+                <p class="copyright">
+                    جميع الحقوق محفوظة © 2026 - المنصة الدراسية الذكية
+                    <br>
+                    تم التطوير بـ <i class="fas fa-heart" style="color: #e74c3c;"></i> من فريق عربي شاب
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 🔹 10. الروابط الجافاسكريبت -->
+    <script src="js/animations.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
